@@ -9,6 +9,17 @@ module.exports = function getTimeForEducation(
     knowsProgramming = true,
     config = {family: 4}
     ) {
-      return 0;
+
+      hoursInWeek = 168
+      beginnerToMaster = 1300
+      normalToMaster = 800
+
+      let configMap = new Map(Object.entries(config))
+
+      knowsProgramming ? 
+      education = (normalToMaster/hoursInWeek)/(configMap.get(focus)/hoursInWeek) :
+      education = (beginnerToMaster/hoursInWeek)/(configMap.get(focus)/hoursInWeek)
+
+      return Math.ceil(education); 
   };
   
